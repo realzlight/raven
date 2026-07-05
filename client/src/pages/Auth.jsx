@@ -23,6 +23,16 @@ export default function Login() {
     waveSpeed={0.05}
   />
 </div>
+
+ <div className="bg-layer">
+    <Aurora
+      colorStops={["#33fe12","#B497CF","#5227FF"]}
+      blend={0.58}
+      amplitude={1.0}
+      speed={1.1}
+    />
+  </div>
+</div>
       
       <div className="auth-card">
 
