@@ -18,10 +18,11 @@
 }
 
 .auth-page {
-  min-height: 100dvh;
+  min-height: 90dvh;
   background: var(--bg);
   display: flex;
   justify-content: center;
+  align-items:center;
   padding: 24px;
   font-family: var(--sans);
 }
@@ -95,16 +96,16 @@
 .auth-header {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 
 .auth-title {
-  font-size: 26px;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 650;
   color: var(--white);
   letter-spacing: 0.2px;
   
-  line-height: 1.2;
+  
     background: linear-gradient(90deg, hsla(0, 0%, 80%, 1), #fff, hsla(0, 0%, 70%, 1));
   background-size:200% auto;
 
@@ -158,121 +159,3 @@
 
 .social-btn:active { transform: scale(0.98); }
 
-.auth-divider {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.auth-divider span {
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-}
-
-.auth-divider p {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--muted);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  flex-shrink: 0;
-}
-
-.auth-form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.field label {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--subtle);
-}
-
-.field input {
-  background: var(--surface);
-  border: 1px solid var(--border2);
-  border-radius: var(--radius);
-  color: var(--text);
-  font-family: var(--sans);
-  font-size: 14px;
-  padding: 10px 13px;
-  outline: none;
-  transition: border-color 0.15s, box-shadow 0.15s;
-  -webkit-appearance: none;
-}
-
-.field input::placeholder { color: var(--muted); }
-
-.field input:focus {
-  border-color: var(--subtle);
-  box-shadow: 0 0 0 3px rgba(115,115,115,0.08);
-}
-
-.auth-submit {
-  width: 100%;
-  padding: 11px;
-  background: var(--white);
-  color: #000;
-  border: none;
-  border-radius: var(--radius);
-  font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  letter-spacing: 0.01em;
-  transition: opacity 0.15s, transform 0.1s;
-  margin-top: 4px;
-}
-
-.auth-submit:hover  { opacity: 0.88; }
-.auth-submit:active { transform: scale(0.98); }
-
-.auth-switch {
-  text-align: center;
-  font-size: 12px;
-  color: var(--subtle);
-  font-family: var(--mono);
-  letter-spacing: 0.04em;
-}
-
-.auth-switch a {
-  color: var(--text);
-  text-decoration: none;
-  transition: color 0.15s;
-}
-
-.auth-switch a:hover { color: var(--white); }
-
-.field-reveal {
-  animation: revealField 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  overflow: hidden;
-}
-
-@keyframes revealField {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-    max-height: 0;
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    max-height: 100px;
-  }
-}
-
-.field input:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
