@@ -100,8 +100,8 @@
 }
 
 .auth-title {
-  font-size: 30px;
-  font-weight: 650;
+  font-size: 32px;
+  font-weight: 700;
   color: var(--white);
   letter-spacing: 0.2px;
   
@@ -123,7 +123,7 @@
 
 
 .auth-sub {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--subtle);
 }
 
