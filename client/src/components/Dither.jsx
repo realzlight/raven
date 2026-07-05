@@ -234,7 +234,7 @@ function DitheredWaves({
     mouseRef.current.set((e.clientX - rect.left) * dpr, (e.clientY - rect.top) * dpr);
   };
 
-  return (return (
+  return (
   <>
     <mesh ref={mesh} scale={[viewport.width, viewport.height, 1]}>
       <planeGeometry args={[1, 1]} />
