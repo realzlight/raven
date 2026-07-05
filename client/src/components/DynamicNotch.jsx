@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import '../styles/DynamicNotch.css'
 
-const message = [
+const messages = [
   "Get to Know your Potential, with AI",
   "Ascend battle with others to claim 1#",
   "Top #1 is waiting for you",
