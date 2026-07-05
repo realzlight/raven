@@ -1,0 +1,23 @@
+.dither-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.dither-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.auth-page::before {
+  /* keep everything else the same, just change: */
+  position: absolute; /* was fixed */
+  z-index: 1;          /* was 0 */
+}
+
+.auth-card {
+  z-index: 2;           /* was 1 */
+  /* rest stays the same */
+}

@@ -4,12 +4,26 @@ import { Link, useNavigate } from 'react-router-dom'
 import axios from '../lib/axios.js'
 import DynamicNotch from '../components/DynamicNotch.jsx'
 import LoadingSpinner from '../components/LoadingSpinner.jsx'
-
+import Dither from '../components/Dither.jsx'
 export default function Login() {
   
   
   return (
     <div className="auth-page">
+      
+      <div className="dither-bg">
+  <Dither
+    waveColor={[0.5, 0.5, 0.5]}
+    disableAnimation={false}
+    enableMouseInteraction
+    mouseRadius={0.3}
+    colorNum={4}
+    waveAmplitude={0.3}
+    waveFrequency={3}
+    waveSpeed={0.05}
+  />
+</div>
+      
       <div className="auth-card">
 
 <DynamicNotch/>
