@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import { useRef, useEffect, forwardRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { EffectComposer, wrapEffect } from '@react-three/postprocessing';
 import { Effect } from 'postprocessing';
@@ -157,13 +157,11 @@ class RetroEffectImpl extends Effect {
   }
 }
 
-const WrappedRetro = wrapEffect(RetroEffectImpl);
-
-const RetroEffect = forwardRef((props, ref) => {
-  const { colorNum, pixelSize } = props;
-  return <WrappedRetro ref={ref} colorNum={colorNum} pixelSize={pixelSize} />;
-});
-RetroEffect.displayName = 'RetroEffect';
+// FIX: v3 of @react-three/postprocessing dropped forwardRef inside wrapEffect.
+// The old code re-wrapped it in a manual forwardRef, which broke the ref
+// connection to EffectComposer and silently killed the effect + animation.
+// wrapEffect alone is enough now — no extra wrapper needed.
+const RetroEffect = wrapEffect(RetroEffectImpl);
 
 function DitheredWaves({
   waveSpeed,
@@ -204,6 +202,9 @@ function DitheredWaves({
 
   const prevColor = useRef([...waveColor]);
   useFrame(({ clock }) => {
+    // TEMP DEBUG — remove once confirmed the loop is ticking
+    console.log('frame', clock.getElapsedTime());
+
     const u = waveUniformsRef.current;
 
     if (!disableAnimation) {
@@ -235,31 +236,31 @@ function DitheredWaves({
   };
 
   return (
-  <>
-    <mesh ref={mesh} scale={[viewport.width, viewport.height, 1]}>
-      <planeGeometry args={[1, 1]} />
-      <shaderMaterial
-        vertexShader={waveVertexShader}
-        fragmentShader={waveFragmentShader}
-        uniforms={waveUniformsRef.current}
-      />
-    </mesh>
+    <>
+      <mesh ref={mesh} scale={[viewport.width, viewport.height, 1]}>
+        <planeGeometry args={[1, 1]} />
+        <shaderMaterial
+          vertexShader={waveVertexShader}
+          fragmentShader={waveFragmentShader}
+          uniforms={waveUniformsRef.current}
+        />
+      </mesh>
 
-    {/* <EffectComposer>
-      <RetroEffect colorNum={colorNum} pixelSize={pixelSize} />
-    </EffectComposer> */}
+      <EffectComposer>
+        <RetroEffect colorNum={colorNum} pixelSize={pixelSize} />
+      </EffectComposer>
 
-    <mesh
-      onPointerMove={handlePointerMove}
-      position={[0, 0, 0.01]}
-      scale={[viewport.width, viewport.height, 1]}
-      visible={false}
-    >
-      <planeGeometry args={[1, 1]} />
-      <meshBasicMaterial transparent opacity={0} />
-    </mesh>
-  </>
-);
+      <mesh
+        onPointerMove={handlePointerMove}
+        position={[0, 0, 0.01]}
+        scale={[viewport.width, viewport.height, 1]}
+        visible={false}
+      >
+        <planeGeometry args={[1, 1]} />
+        <meshBasicMaterial transparent opacity={0} />
+      </mesh>
+    </>
+  );
 }
 
 export default function Dither({
