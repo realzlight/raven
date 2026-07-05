@@ -5,6 +5,8 @@ import axios from '../lib/axios.js'
 import DynamicNotch from '../components/DynamicNotch.jsx'
 import LoadingSpinner from '../components/LoadingSpinner.jsx'
 import Dither from '../components/Dither.jsx'
+import Aurora from '../components/Aurora.jsx'
+
 export default function Login() {
   
   
