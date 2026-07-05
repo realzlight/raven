@@ -1,0 +1,222 @@
+:root {
+  --bg: #000;
+  --surface: #0a0a0a;
+  --border: #1a1a1a;
+  --border2: #262626;
+  --muted: #404040;
+  --subtle: #737373;
+  --text: #e5e5e5;
+  --white: #fafafa;
+  --radius: 6px;
+  --error: #ff4444;
+}
+
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--bg);
+  padding: 16px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+}
+
+.auth-logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 32px;
+  cursor: pointer;
+  font-family: 'Geist Mono', monospace;
+}
+
+.auth-header {
+  margin-bottom: 28px;
+}
+
+.auth-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--white);
+  margin: 0 0 8px;
+  font-family: 'Geist', -apple-system, sans-serif;
+}
+
+.auth-sub {
+  font-size: 13px;
+  color: var(--subtle);
+  margin: 0;
+  font-family: 'Geist', -apple-system, sans-serif;
+}
+
+.social-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 150ms ease;
+  font-family: 'Geist', -apple-system, sans-serif;
+}
+
+.social-btn:hover {
+  border-color: var(--muted);
+  background: var(--border);
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.auth-divider span {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.auth-divider p {
+  color: var(--subtle);
+  font-size: 12px;
+  margin: 0;
+  font-family: 'Geist', -apple-system, sans-serif;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+.field label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+  font-family: 'Geist', -apple-system, sans-serif;
+}
+
+.field label::after {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: transparent;
+  transition: background 150ms ease;
+}
+
+.field.error label::after {
+  background: var(--error);
+}
+
+.field input {
+  padding: 10px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  color: var(--white);
+  font-size: 13px;
+  font-family: 'Geist Mono', monospace;
+  transition: all 150ms ease;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: var(--muted);
+  background: var(--bg);
+}
+
+.field input.input-error {
+  border-color: var(--error);
+}
+
+.field input.input-error:focus {
+  border-color: var(--error);
+}
+
+.error-text {
+  font-size: 12px;
+  color: var(--error);
+  font-family: 'Geist', -apple-system, sans-serif;
+}
+
+.error-text.center {
+  text-align: center;
+}
+
+.auth-submit {
+  padding: 10px 16px;
+  background: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  color: var(--bg);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 150ms ease;
+  font-family: 'Geist', -apple-system, sans-serif;
+  margin-top: 8px;
+}
+
+.auth-submit:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.auth-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-switch {
+  text-align: center;
+  font-size: 13px;
+  color: var(--subtle);
+  margin: 0;
+  font-family: 'Geist', -apple-system, sans-serif;
+}
+
+.auth-switch a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 150ms ease;
+}
+
+.auth-switch a:hover {
+  color: var(--text);
+}
