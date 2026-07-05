@@ -32,7 +32,7 @@ export default function Login() {
       speed={1.1}
     />
   </div>
-</div>
+
       
       <div className="auth-card">
 
