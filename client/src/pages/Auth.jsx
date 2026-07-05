@@ -38,8 +38,9 @@ export default function Login() {
       
       <div className="auth-card">
 
-<DynamicNotch/>
+
         <div className="auth-header">
+          <DynamicNotch/>
           <h1 className="auth-title">Prestigious Returns!</h1>
           <p className="auth-sub">we missed you, your presense is Fire!</p>
         </div>
