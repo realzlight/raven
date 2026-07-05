@@ -1,19 +1,17 @@
 import { useEffect, useState, useRef } from "react";
 import '../styles/DynamicNotch.css'
 
-const messages = [
-  "changelog that actually updates itself",
-  "less stress, more shipping",
-  "User Visibility Is Prioritized!",
-  "built for devs who ship fast",
-  "no more dead changelogs",
-  "just connect your repo & go",
-  "smart auto-updates for your releases",
-  "changelog that doesn't suck",
-  "one less thing to worry about",
-  "literally just works",
-];
-
+const message = [
+  "Get to Know your Potential, with AI",
+  "Ascend battle with others to claim 1#",
+  "Top #1 is waiting for you",
+  "Ascend or get left behind",
+  "Are you Sure you are HTN?",
+  "Discover Ascensions Peoples lile you!",
+  "Get your facial percentage!",
+  "DM's open, GC's poppin",
+  "Ascension isn't a phase, it's a grind"
+]
 export default function DynamicNotch() {
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(true);
