@@ -27,12 +27,13 @@ export default function Login() {
 </div>
 
  <div className="bg-layer">
-    <Aurora
-      colorStops={["#33fe12","#B497CF","#5227FF"]}
-      blend={0.58}
-      amplitude={1.0}
-      speed={1.1}
-    />
+
+<Aurora
+  colorStops={["#e9eee8","#7d7c7e","#101010"]}
+  blend={0.58}
+  amplitude={1.0}
+  speed={1.1}
+/>
   </div>
 
       
@@ -42,7 +43,7 @@ export default function Login() {
         <div className="auth-header">
           <DynamicNotch/>
           <h1 className="auth-title">Prestigious Returns!</h1>
-          <p className="auth-sub">we missed you, your presense is Fire!</p>
+          <p className="auth-sub">we missed you, your presense is <span className="fire">Fire!</span></p>
         </div>
 
         <div className="social-group">

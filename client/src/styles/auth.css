@@ -126,7 +126,18 @@
   font-size: 15px;
   color: var(--subtle);
 }
+.fire{
+  font-size: 15px;
+  color: var(--subtle);
+      background: linear-gradient(90deg, hsla(0, 0%, 80%, 1), #fff, hsla(0, 0%, 70%, 1));
+  background-size:200% auto;
 
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:text-gradient 3s linear infinite;
+}
 .social-group {
   display: flex;
   flex-direction: column;
