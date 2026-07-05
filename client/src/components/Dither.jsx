@@ -234,32 +234,32 @@ function DitheredWaves({
     mouseRef.current.set((e.clientX - rect.left) * dpr, (e.clientY - rect.top) * dpr);
   };
 
-  return (
-    <>
-      <mesh ref={mesh} scale={[viewport.width, viewport.height, 1]}>
-        <planeGeometry args={[1, 1]} />
-        <shaderMaterial
-          vertexShader={waveVertexShader}
-          fragmentShader={waveFragmentShader}
-          uniforms={waveUniformsRef.current}
-        />
-      </mesh>
+  return (return (
+  <>
+    <mesh ref={mesh} scale={[viewport.width, viewport.height, 1]}>
+      <planeGeometry args={[1, 1]} />
+      <shaderMaterial
+        vertexShader={waveVertexShader}
+        fragmentShader={waveFragmentShader}
+        uniforms={waveUniformsRef.current}
+      />
+    </mesh>
 
-      <EffectComposer>
-        <RetroEffect colorNum={colorNum} pixelSize={pixelSize} />
-      </EffectComposer>
+    {/* <EffectComposer>
+      <RetroEffect colorNum={colorNum} pixelSize={pixelSize} />
+    </EffectComposer> */}
 
-      <mesh
-        onPointerMove={handlePointerMove}
-        position={[0, 0, 0.01]}
-        scale={[viewport.width, viewport.height, 1]}
-        visible={false}
-      >
-        <planeGeometry args={[1, 1]} />
-        <meshBasicMaterial transparent opacity={0} />
-      </mesh>
-    </>
-  );
+    <mesh
+      onPointerMove={handlePointerMove}
+      position={[0, 0, 0.01]}
+      scale={[viewport.width, viewport.height, 1]}
+      visible={false}
+    >
+      <planeGeometry args={[1, 1]} />
+      <meshBasicMaterial transparent opacity={0} />
+    </mesh>
+  </>
+);
 }
 
 export default function Dither({
