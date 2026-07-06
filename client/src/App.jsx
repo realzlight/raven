@@ -9,6 +9,7 @@ import Profile from './pages/Profile.jsx';
 import Chats from './pages/Chats.jsx';
 import Search from './pages/Search.jsx';
 import Auth from './pages/Auth.jsx'
+import Initials from './pages/Initials.jsx'
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/chats" element={<Chats />} />
         <Route path="/search" element={<Search />} />
         <Route path="/auth" element={<Auth/>}/>
+        <Route path="/initials" element={<Initials/>}/>
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
