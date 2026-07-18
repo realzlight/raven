@@ -1,6 +1,7 @@
 import express from 'express'
 import passport from '../configs/passport.js'
-import { googleCallback, logout } from '../controllers/authController.js'
+import verifyAuth from '../middlewares/verifyAuth.js'
+import { googleCallback, logout, getMe, updateProfile } from '../controllers/authController.js'
 
 const router = express.Router()
 
@@ -22,5 +23,7 @@ router.get(
 )
 
 router.post('/logout', logout)
+router.get('/me', verifyAuth, getMe)
+router.post('/complete-profile', verifyAuth, updateProfile)
 
 export default router

@@ -1,5 +1,5 @@
 import '../styles/auth.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from '../lib/axios.js'
 import DynamicNotch from '../components/DynamicNotch.jsx'
@@ -8,8 +8,24 @@ import Dither from '../components/Dither.jsx'
 import Aurora from '../components/Aurora.jsx'
 
 export default function Login() {
-  
-  
+  const navigate = useNavigate()  
+  const [checking, setChecking] = useState(true)
+
+  useEffect(() => {
+  const checkAuth = async () => {
+    try {
+      await axios.get('/api/auth/me')
+      navigate('/home')
+    } catch (err) {
+      setChecking(false)
+    }
+  }
+  checkAuth()
+}, [navigate])
+
+  if (checking) return null	
+
+
   return (
     <div className="auth-page">
       

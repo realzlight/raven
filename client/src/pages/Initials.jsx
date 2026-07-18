@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from '../lib/axios.js'
 import Aurora from '../components/Aurora.jsx'
@@ -12,10 +12,24 @@ export default function Initials() {
   const [username, setUsername] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
-
+  const [checking, setChecking] = useState(true)
   const usernameValid = USERNAME_RE.test(username)
   const canSubmit = name.trim().length > 0 && usernameValid && !loading
-
+  useEffect(() => {
+  const checkAccess = async () => {
+    try {
+      const res = await axios.get('/api/auth/me')
+      if (res.data.isProfileComplete) {
+        navigate('/home')
+      } else {
+        setChecking(false)
+      }
+    } catch (err) {
+      navigate('/auth')
+    }
+  }
+  checkAccess()
+}, [navigate])
   const handleUsernameChange = (e) => {
     const clean = e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, '')
     setUsername(clean)
