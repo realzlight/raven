@@ -34,7 +34,7 @@ const CardNav = ({
           </div>
 
           <div className="logo-container">
-            <span className="logo-text">{logoText}</span>
+            <span onClick={navigate('http://localhost:5173/')} className="logo-text">{logoText}</span>
           </div>
 
           <button type="button" className="card-nav-cta-button">

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from '../lib/axios.js'
 import Aurora from '../components/Aurora.jsx'
 import '../styles/initials.css'
+import CardNav from '../components/CardNav.jsx'
 
 const USERNAME_RE = /^[a-z0-9_]{3,20}$/
 
@@ -73,7 +74,7 @@ export default function Initials() {
           speed={1.1}
         />
       </div>
-
+    <CardNav logoText="Raven" />
       <div className="initials-page">
         <div className="initials-content">
           <p className="initials-step">Step 1 of 2</p>
