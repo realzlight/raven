@@ -10,9 +10,8 @@ export default function Landing() {
 
   return (
     <div className="landing-page">
-      <CardNav logoText="Raven" /> 
-      
-      <div className="bg-layer" style={{ width: '100%', height: '600px', position: 'relative' }}>
+
+      <div className="bg-layer" style={{ width: '100%', height: '100%', position: 'relative' }}>
         <DotField
           dotRadius={1}
           dotSpacing={14}
@@ -28,19 +27,15 @@ export default function Landing() {
           glowColor="#120F17"
         />
       </div>
+            <CardNav logoText="Raven" /> 
       
-      <div class="landing-container">
-        
-        <div class="landing-top">
+
+
           <DynamicNotch/>
           
           <h1>Impactfull</h1>
           
-        </div>
-        
-        
-        
-      </div>
+
       
       
       
