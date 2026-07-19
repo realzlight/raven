@@ -1,16 +1,21 @@
-import { useState, useNavigate } from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // 1. import from react-router-dom
 import '../styles/CardNav.css';
 
-const navigate = useNavigate()
 const CardNav = ({
   logoText = 'RAVEN',
   className = ''
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate() // 2. hook must be INSIDE component
 
   const toggleMenu = () => {
     setIsOpen(prev => !prev);
   };
+
+  const goHome = () => {
+    navigate('/'); // 3. use '/' for home, not full url
+  }
 
   return (
     <div className={`card-nav-container ${className}`}>
@@ -35,10 +40,14 @@ const CardNav = ({
           </div>
 
           <div className="logo-container">
-            <span onClick={navigate('http://localhost:5173/')} className="logo-text">{logoText}</span>
+            <span onClick={goHome} className="logo-text cursor-pointer">{logoText}</span>
           </div>
 
-          <button type="button" className="card-nav-cta-button">
+          <button 
+            type="button" 
+            className="card-nav-cta-button"
+            onClick={() => navigate('/get-started')} // example
+          >
             Get Started
           </button>
         </div>
