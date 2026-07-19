@@ -4,7 +4,7 @@ import axios from '../lib/axios.js'
 import CardNav from '../components/CardNav.jsx'
 import DotField from '../components/DotField.jsx';
  import DynamicNotch from '../components/DynamicNotch.jsx'
-
+import '../styles/landing.css'
 export default function Landing() {
   const navigate = useNavigate()
 
