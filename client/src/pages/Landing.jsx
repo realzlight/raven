@@ -9,7 +9,7 @@ export default function Landing() {
   const navigate = useNavigate()
 
   return (
-    <> 
+    <div className="landing-page">
       <CardNav logoText="Raven" /> 
       
       <div className="bg-layer" style={{ width: '100%', height: '600px', position: 'relative' }}>
@@ -34,7 +34,7 @@ export default function Landing() {
         <div class="landing-top">
           <DynamicNotch/>
           
-          <h1></h1>
+          <h1>Impactfull</h1>
           
         </div>
         
@@ -48,6 +48,6 @@ export default function Landing() {
       
       
       
-    </>
+    </div>
   )
 }
