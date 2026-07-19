@@ -3,3 +3,8 @@
   width:100%;
   height:80vh;
 }
+
+.landing-nav{
+  border:1px solid red;
+  width:100%;
+}

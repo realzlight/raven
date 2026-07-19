@@ -36,9 +36,9 @@ export default function Landing() {
         />
       </div>
       
-      
+    <div className="landing-nav">
     <CardNav logoText="RAVEN" /> 
-    
+    </div>
     
 
       <div style={{ position: 'relative', zIndex: 1 }} className="landing-hero">
