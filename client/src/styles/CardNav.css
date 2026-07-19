@@ -4,41 +4,88 @@
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
-  max-width: 800px;
+  max-width: 640px;
   z-index: 99;
   box-sizing: border-box;
 }
 
-.card-nav {
-  display: block;
-  height: 60px;
-  padding: 0;
-  background: rgba(20, 20, 20, 0.55);
-  backdrop-filter: blur(20px) saturate(150%);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
-  border: 0.5px solid rgba(255, 255, 255, 0.08);
-  border-radius: 0.75rem;
-  box-shadow:
-    0 4px 24px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  position: relative;
+/* SVG filter defs render at 0x0, never visible */
+.liquid-glass-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
   overflow: hidden;
 }
 
-.card-nav-top {
+.card-nav {
+  position: relative;
+  height: 56px;
+  border-radius: 999px;
+  overflow: hidden;
+  isolation: isolate;
+
+  /* base glass fill — soft dark tint, lets blurred content read through */
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.02) 45%,
+    rgba(0, 0, 0, 0.08) 100%
+  ), rgba(16, 16, 18, 0.32);
+
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+
+  border: 1px solid rgba(235, 235, 240, 0.14);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04),
+    inset 0 0 24px rgba(255, 255, 255, 0.03),
+    0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* the actual "liquid" layer — refracts/warps what's behind the nav.
+   Sits on top of the base blur. If a browser doesn't support SVG
+   filters inside backdrop-filter, this just does nothing and the
+   base glass above still looks correct. */
+.card-nav-refraction {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 0.45rem 0.55rem 1.1rem;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  backdrop-filter: blur(1px) url(#liquid-distortion);
+  -webkit-backdrop-filter: blur(1px);
+}
+
+/* moving specular highlight, like light catching curved glass */
+.card-nav::after {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: 10%;
+  width: 45%;
+  height: 90%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-nav-top {
+  position: relative;
   z-index: 2;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 0.4rem 0 1rem;
 }
 
 .hamburger-menu {
+  justify-self: start;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -46,7 +93,7 @@
   justify-content: center;
   cursor: pointer;
   gap: 6px;
-  color: #e5e5e5;
+  color: #f2f2f2;
 }
 
 .hamburger-menu:hover .hamburger-line {
@@ -54,13 +101,12 @@
 }
 
 .hamburger-line {
-  width: 26px;
+  width: 22px;
   height: 1.5px;
   background-color: currentColor;
   transition:
     transform 0.25s ease,
-    opacity 0.2s ease,
-    margin 0.3s ease;
+    opacity 0.2s ease;
   transform-origin: 50% 50%;
 }
 
@@ -73,59 +119,48 @@
 }
 
 .logo-container {
+  justify-self: center;
   display: flex;
   align-items: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .logo-text {
   font-family: 'Geist', sans-serif;
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 1rem;
   letter-spacing: 0.08em;
   color: #fafafa;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .card-nav-cta-button {
-  background-color: rgba(255, 255, 255, 0.06);
+  justify-self: end;
+  background: rgba(255, 255, 255, 0.08);
   color: #fafafa;
-  border: 0.5px solid rgba(255, 255, 255, 0.1);
-  border-radius: calc(0.75rem - 0.35rem);
-  padding: 0 1rem;
-  height: 100%;
+  border: 1px solid rgba(235, 235, 240, 0.16);
+  border-radius: 999px;
+  padding: 0 1.1rem;
+  height: 38px;
+  font-size: 0.85rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  align-items: center;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(6px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: background-color 0.25s ease;
 }
 
 .card-nav-cta-button:hover {
-  background-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.14);
 }
 
 @media (max-width: 768px) {
   .card-nav-container {
-    width: 90%;
+    width: 92%;
     top: 1.2em;
   }
 
   .card-nav-top {
-    padding: 0.5rem 1rem;
-    justify-content: space-between;
-  }
-
-  .hamburger-menu {
-    order: 2;
-  }
-
-  .logo-container {
-    position: static;
-    transform: none;
-    order: 1;
+    padding: 0 0.4rem 0 0.9rem;
   }
 
   .card-nav-cta-button {
