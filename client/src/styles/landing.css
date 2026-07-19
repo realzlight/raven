@@ -66,11 +66,15 @@
 }
 
 .hero-subtext {
-  color: rgba(255,255,255,0.6);
-  font-size: 1rem;
-  line-height: 1.5;
-  max-width: 480px;
-  margin: 20px 0 0 0;
+  
+    font-size: 15px;
+    color:#737373;
+    max-width: 340px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.3s ease-out forwards;
+  
 }
 
 .hero-actions {
