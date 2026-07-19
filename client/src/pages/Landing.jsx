@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from '../lib/axios.js'
 import CardNav from '../components/CardNav.jsx'
 import DotField from '../components/DotField.jsx';
-
-// import DynamicNotch from '../components/DynamicNotch.jsx' // fix this import
+ import DynamicNotch from '../components/DynamicNotch.jsx'
 
 export default function Landing() {
   const navigate = useNavigate()
@@ -44,7 +43,7 @@ export default function Landing() {
 
       <div style={{ position: 'relative', zIndex: 1 }} className="landing-hero">
 
-     {/*   <DynamicNotch/> */}
+        <DynamicNotch/> 
         <h1 style={{ color: 'white',marginTop: '40vh' }}>Impactfull</h1>
       </div>
       
