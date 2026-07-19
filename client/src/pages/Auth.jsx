@@ -53,12 +53,12 @@ export default function Login() {
 />
   </div>
 
-      <CardNav logoText="Raven" />
+      <CardNav logoText="RAVEN" />
 
       <div className="auth-card">
 
         <div className="auth-header">
-          <DynamicNotch/>
+        {/*  <DynamicNotch/>*/}
           <h1 className="auth-title">Prestigious Returns!</h1>
           <p className="auth-sub">we missed you, your presense is <span className="fire">Fire!</span></p>
         </div>
