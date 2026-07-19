@@ -12,22 +12,28 @@ export default function Landing() {
   return (
     <div className="landing-page">
 
-      <div className="bg-layer">
-        <DotField
-          dotRadius={1}
-          dotSpacing={14}
-          bulgeStrength={67}
-          glowRadius={100}
-          sparkle={false}
-          waveAmplitude={0}
-          cursorRadius={500}
-          cursorForce={0.1}
-          bulgeOnly
-          gradientFrom="#7b797b"
-          gradientTo="#7b787d"
-          glowColor="#120F17"
-        />
-      </div>
+<div className="bg-layer">
+  <Aurora
+    colorStops={["#e9eee8","#7d7c7e","#101010"]}
+    blend={0.58}
+    amplitude={1.0}
+    speed={1.1}
+  />
+  <DotField
+    dotRadius={1}
+    dotSpacing={14}
+    bulgeStrength={67}
+    glowRadius={100}
+    sparkle={false}
+    waveAmplitude={0}
+    cursorRadius={500}
+    cursorForce={0.1}
+    bulgeOnly
+    gradientFrom="#7b797b"
+    gradientTo="#7b787d"
+    glowColor="#120F17"
+  />
+</div>
 
       <div className="landing-nav">
         <CardNav logoText="RAVEN" />
