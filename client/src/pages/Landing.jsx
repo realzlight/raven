@@ -5,12 +5,7 @@ import CardNav from '../components/CardNav.jsx'
 
 export default function Landing() {
   const navigate = useNavigate()
-  
 
-    
-  
-
-const App = () => {
   const items = [
     {
       label: "About",
@@ -22,7 +17,7 @@ const App = () => {
       ]
     },
     {
-      label: "Projects", 
+      label: "Projects",
       bgColor: "#2F293A",
       textColor: "#fff",
       links: [
@@ -32,7 +27,7 @@ const App = () => {
     },
     {
       label: "Contact",
-      bgColor: "#2F293A", 
+      bgColor: "#2F293A",
       textColor: "#fff",
       links: [
         { label: "Email", ariaLabel: "Email us" },
@@ -40,29 +35,22 @@ const App = () => {
         { label: "LinkedIn", ariaLabel: "LinkedIn" }
       ]
     }
-  ];
-}
+  ]
+
   return (
     <CardNav
-    
-      logoAlt="RAVEN"
+      logoText="RAVEN"
       items={items}
       baseColor="#fff"
       menuColor="#000"
       buttonBgColor="#111"
       buttonTextColor="#fff"
       ease="power3.out"
-  theme="dark"
-/>
-
-
-
-
-)
-
-
-
-
-
-
+    />
+    
+    
+    
+  )
+  
+  
 }

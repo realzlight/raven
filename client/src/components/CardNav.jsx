@@ -5,8 +5,7 @@ import { GoArrowUpRight } from 'react-icons/go';
 import '../styles/CardNav.css';
 
 const CardNav = ({
-
-  logoAlt = 'RAVEN',
+  logoText = 'RAVEN',
   items,
   className = '',
   ease = 'power3.out',
@@ -157,7 +156,7 @@ const CardNav = ({
           </div>
 
           <div className="logo-container">
-            <img src={logo} alt={logoAlt} className="logo" />
+            <span className="logo-text">{logoText}</span>
           </div>
 
           <button
