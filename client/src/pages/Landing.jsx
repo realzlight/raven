@@ -5,7 +5,7 @@ import CardNav from '../components/CardNav.jsx'
 import DotField from '../components/DotField.jsx';
 import DynamicNotch from '../components/DynamicNotch.jsx'
 import '../styles/landing.css'
-
+import Aurora from '../components/Aurora.jsx'
 export default function Landing() {
   const navigate = useNavigate()
 
