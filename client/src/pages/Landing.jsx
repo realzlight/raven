@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from '../lib/axios.js'
 import CardNav from '../components/CardNav.jsx'
 import DotField from '../components/DotField.jsx';
+import DynamicNotch from '../components/CardNav.jsx'
 
 export default function Landing() {
   const navigate = useNavigate()
@@ -27,6 +28,26 @@ export default function Landing() {
           glowColor="#120F17"
         />
       </div>
+      
+      <div class="landing-container">
+        
+        <div class="landing-top">
+          <DynamicNotch/>
+          
+          <h1></h1>
+          
+        </div>
+        
+        
+        
+      </div>
+      
+      
+      
+      
+      
+      
+      
     </>
   )
 }
