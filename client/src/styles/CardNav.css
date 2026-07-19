@@ -20,7 +20,7 @@
 .card-nav {
   position: relative;
   height: 56px;
-  border-radius: 999px;
+  border-radius: 15px;
   overflow: hidden;
   isolation: isolate;
 
