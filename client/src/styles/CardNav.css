@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@469&display=swap');
+
+
 .card-nav-container {
   position: absolute;
   top: 2em;
@@ -39,7 +43,7 @@
 }
 
 .logo-text {
-  font-family: 'Geist', sans-serif;
+  font-family: 'Changa One', sans-serif;
   font-weight: 500;
   font-size: 1rem;
   letter-spacing: 0.02em;
