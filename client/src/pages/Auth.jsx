@@ -6,6 +6,7 @@ import DynamicNotch from '../components/DynamicNotch.jsx'
 import LoadingSpinner from '../components/LoadingSpinner.jsx'
 import Dither from '../components/Dither.jsx'
 import Aurora from '../components/Aurora.jsx'
+import CardNav from '../components/CardNav.jsx'
 
 export default function Login() {
   const navigate = useNavigate()  
@@ -54,7 +55,7 @@ export default function Login() {
 
       
       <div className="auth-card">
-
+       <CardNav logoText="Raven" />
 
         <div className="auth-header">
           <DynamicNotch/>
