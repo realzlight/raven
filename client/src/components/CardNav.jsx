@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useNavigate } from 'react';
 import '../styles/CardNav.css';
 
+const navigate = useNavigate()
 const CardNav = ({
   logoText = 'RAVEN',
   className = ''
