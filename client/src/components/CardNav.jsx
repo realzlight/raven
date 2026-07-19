@@ -5,7 +5,7 @@ import { GoArrowUpRight } from 'react-icons/go';
 import '../styles/CardNav.css';
 
 const CardNav = ({
-  logo,
+
   logoAlt = 'RAVEN',
   items,
   className = '',

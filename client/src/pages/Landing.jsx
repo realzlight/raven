@@ -44,7 +44,7 @@ const App = () => {
 }
   return (
     <CardNav
-      logo={logo}
+    
       logoAlt="RAVEN"
       items={items}
       baseColor="#fff"
