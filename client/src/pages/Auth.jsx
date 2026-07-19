@@ -53,9 +53,9 @@ export default function Login() {
 />
   </div>
 
-      
+      <CardNav logoText="Raven" />
+
       <div className="auth-card">
-       <CardNav logoText="Raven" />
 
         <div className="auth-header">
           <DynamicNotch/>
