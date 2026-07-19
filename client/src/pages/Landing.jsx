@@ -7,6 +7,6 @@ export default function Landing() {
   const navigate = useNavigate()
 
   return (
-    <CardNav logoText="RAVEN" />
+    <CardNav logoText="Raven" />
   )
 }
