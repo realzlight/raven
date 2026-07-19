@@ -35,12 +35,16 @@ export default function Landing() {
           glowColor="#120F17"
         />
       </div>
-
+      
+      
+    <CardNav logoText="RAVEN" /> 
+    
+    
       {/* Foreground content */}
       <div style={{ position: 'relative', zIndex: 1 }}>
-        <CardNav logoText="Raven" /> 
+
         {/* <DynamicNotch/> */}
-        <h1 style={{ color: 'white', textAlign: 'center', marginTop: '40vh' }}>Impactfull</h1>
+        <h1 style={{ color: 'white',marginTop: '40vh' }}>Impactfull</h1>
       </div>
       
     </div>
