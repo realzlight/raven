@@ -41,13 +41,21 @@
 }
 
 .hero-title {
-  color: white;
-  font-size: 2.6rem;
-  font-weight: 800;
-  line-height: 1.05;
-  margin: 0;
-  text-align:center;
-}
+    font-family: var(--mono);
+    font-size: clamp(72px, 20vw, 128px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    line-height: 0.9;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.2s ease-out forwards;
+    /* subtle vertical gradient */
+    background: linear-gradient(180deg, #fff 0%, #666 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
 .hero-title .accent {
   background: linear-gradient(90deg, #a855f7, #7c3aed);
