@@ -25,6 +25,27 @@
   align-items:center;
   padding: 24px;
   font-family: var(--sans);
+  position: relative;
+}
+
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.auth-page > .card-nav-container {
+  position: absolute;
+  top: 2em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  .auth-page > .card-nav-container {
+    top: 1.2em;
+  }
 }
 
 .auth-page::before {
@@ -170,7 +191,7 @@ line-height:1.05;
 
 .social-btn:active { transform: scale(0.98); }
 
-.social-icon { /* ADD THIS */
+.social-icon {
   width: 18px;
   height: 18px;
   flex-shrink: 0;

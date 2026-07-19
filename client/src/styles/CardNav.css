@@ -1,16 +1,10 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@469&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Geist+Mono:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@469&display=swap');
 
-
 .card-nav-container {
-  position: absolute;
-  top: 2em;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   width: 90%;
   max-width: 640px;
+  margin: 0 auto;
   z-index: 99;
   box-sizing: border-box;
 }
@@ -105,7 +99,6 @@
 @media (max-width: 768px) {
   .card-nav-container {
     width: 92%;
-    top: 1.2em;
   }
 
   .card-nav-top {

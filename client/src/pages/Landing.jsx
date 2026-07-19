@@ -35,7 +35,22 @@ export default function Landing() {
 
       <div className="landing-hero">
         <DynamicNotch/>
-        <h1>Impactfull</h1>
+        <h1 className="hero-title">
+          Impactfull UI.<br/>Yours <span className="accent">forever</span>.
+        </h1>
+        <p className="hero-subtext">
+          Animated components, blocks, and templates, crafted for humans
+          and structured for AI agents. The sharpest way to ship pages that stick.
+        </p>
+        <div className="hero-actions">
+          <button className="btn-primary" onClick={() => navigate('/get-started')}>
+            Get Lifetime Access
+          </button>
+          <button className="btn-secondary" onClick={() => navigate('/browse')}>
+            Browse Everything →
+          </button>
+        </div>
+        <p className="hero-trust">TRUSTED BY 1,100+ DEVELOPERS</p>
       </div>
 
     </div>

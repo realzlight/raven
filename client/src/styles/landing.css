@@ -3,7 +3,8 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   position: relative;
 }
 
@@ -18,7 +19,7 @@
   position: relative;
   z-index: 1;
   flex-shrink: 0;
-  padding: 16px;
+  padding: 32px 16px 0;
 }
 
 .landing-hero {
@@ -26,10 +27,69 @@
   z-index: 1;
   flex: 1;
   display: flex;
-  
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 24px;
+  gap: 20px;
 }
 
-
-.landing-hero h1 {
+.hero-title {
   color: white;
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.hero-title .accent {
+  background: linear-gradient(90deg, #a855f7, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-subtext {
+  color: rgba(255,255,255,0.6);
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 480px;
+  margin: 0;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 480px;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hero-trust {
+  color: rgba(255,255,255,0.35);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  margin: 8px 0 0;
 }
