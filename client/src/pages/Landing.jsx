@@ -3,15 +3,23 @@ import { useNavigate } from 'react-router-dom'
 import axios from '../lib/axios.js'
 import CardNav from '../components/CardNav.jsx'
 import DotField from '../components/DotField.jsx';
-import DynamicNotch from '../components/CardNav.jsx'
+// import DynamicNotch from '../components/DynamicNotch.jsx' // fix this import
 
 export default function Landing() {
   const navigate = useNavigate()
 
   return (
-    <div className="landing-page">
+    <div className="landing-page" style={{ position: 'relative', width: '100vw', height: '100vh', overflow: 'hidden' }}>
 
-      <div className="bg-layer" style={{ width: '100%', height: '100%', position: 'relative' }}>
+      {/* Background layer - absolute and behind everything */}
+      <div className="bg-layer" style={{ 
+        width: '100%', 
+        height: '100%', 
+        position: 'absolute', 
+        top: 0, 
+        left: 0, 
+        zIndex: 0 
+      }}>
         <DotField
           dotRadius={1}
           dotSpacing={14}
@@ -27,21 +35,13 @@ export default function Landing() {
           glowColor="#120F17"
         />
       </div>
-            <CardNav logoText="Raven" /> 
-      
 
-
-          <DynamicNotch/>
-          
-          <h1>Impactfull</h1>
-          
-
-      
-      
-      
-      
-      
-      
+      {/* Foreground content */}
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        <CardNav logoText="Raven" /> 
+        {/* <DynamicNotch/> */}
+        <h1 style={{ color: 'white', textAlign: 'center', marginTop: '40vh' }}>Impactfull</h1>
+      </div>
       
     </div>
   )
