@@ -42,7 +42,7 @@ export default function Landing() {
       <div className="landing-hero">
         <DynamicNotch/>
         <h1 className="hero-title">
-          RAVEN
+          Ethereal Face. Ephemeral Forever
         </h1>
         <p className="hero-subtext">
           Animated components, blocks, and templates, crafted for humans
