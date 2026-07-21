@@ -32,9 +32,9 @@ const CardNav = ({
             <button
               type="button"
               className="card-nav-cta-button"
-              onClick={() => navigate('/get-started')}
+              onClick={() => navigate('/auth')}
             >
-              Get Access
+              Get Started
             </button>
 
             <div
