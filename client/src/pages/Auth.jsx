@@ -73,8 +73,8 @@ export default function Login() {
     Continue with GitHub
   </button>
 </div>
-
       </div>
+            <p className="hero-trust">No SSO requirement is asked</p>
     </div>
   )
 }
