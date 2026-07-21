@@ -42,21 +42,20 @@ export default function Landing() {
       <div className="landing-hero">
         <DynamicNotch/>
         <h1 className="hero-title">
-          Ethereal Face. Ephemeral Forever
+          Ethereal Ascension<br/>Yours forever
         </h1>
         <p className="hero-subtext">
-          Animated components, blocks, and templates, crafted for humans
-          and structured for AI agents. The sharpest way to ship pages that stick.
+Everyone claims HTN. Few survive the face-off. Put your face on the line, battle for ascension, and let the cards decide who actually earns the title.
         </p>
         <div className="hero-actions">
-          <button className="btn-primary" onClick={() => navigate('/get-started')}>
-            Get Lifetime Access
+          <button className="btn-primary" onClick={() => navigate('/home')}>
+            Get Started
           </button>
-          <button className="btn-secondary" onClick={() => navigate('/browse')}>
-            Browse Everything →
+          <button className="btn-secondary" onClick={() => navigate('/docs')}>
+            Browse Docs
           </button>
         </div>
-        <p className="hero-trust">TRUSTED BY 1,100+ DEVELOPERS</p>
+        <p className="hero-trust">DESTROY THE #1 WITH YOURS FACECARD</p>
       </div>
 
     </div>

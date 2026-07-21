@@ -1,8 +1,24 @@
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from '../lib/axios.js'
 
 export default function Home() {
   const navigate = useNavigate()
+  const [checking, setChecking] = useState(true)
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        await axios.get('/api/auth/me')
+        setChecking(false)
+      } catch (err) {
+        navigate('/auth', { replace: true })
+      }
+    }
+    checkAuth()
+  }, [navigate])
+
+  if (checking) return null
 
   const handleLogout = async () => {
     try {
