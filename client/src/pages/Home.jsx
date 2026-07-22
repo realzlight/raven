@@ -1,24 +1,17 @@
-import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from '../lib/axios.js'
+import { useUser } from '../context/UserContext.jsx'
+import LoadingSpinner from '../components/LoadingSpinner.jsx'
 
 export default function Home() {
   const navigate = useNavigate()
-  const [checking, setChecking] = useState(true)
+  const { user, loading } = useUser()
 
-  useEffect(() => {
-    const checkAuth = async () => {
-      try {
-        await axios.get('/api/auth/me')
-        setChecking(false)
-      } catch (err) {
-        navigate('/auth', { replace: true })
-      }
-    }
-    checkAuth()
-  }, [navigate])
-
-  if (checking) return null
+  if (loading) return <LoadingSpinner/>
+  if (!user) {
+    navigate('/auth', { replace: true })
+    return <LoadingSpinner/>
+  }
 
   const handleLogout = async () => {
     try {
@@ -32,7 +25,7 @@ export default function Home() {
   return (
     <div style={{ padding: '2rem', color: '#fff', background: '#101010', minHeight: '100vh' }}>
       <h1>Home</h1>
-      <p>You're logged in.</p>
+      <p>You're logged in {user.username}.</p>
       <button onClick={handleLogout} style={{ padding: '10px 20px', cursor: 'pointer' }}>
         Logout
       </button>
