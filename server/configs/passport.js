@@ -16,8 +16,8 @@ passport.use(
         if (!user) {
           user = await User.create({
             googleId: profile.id,
-            email: profile.emails[0].value,
-            avatar: profile.photos?.[0]?.value || '',
+            email: profile.emails[0].value
+            
           })
         }
 
