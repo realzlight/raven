@@ -4,10 +4,12 @@ import axios from '../lib/axios.js'
 import Aurora from '../components/Aurora.jsx'
 import '../styles/initials.css'
 import CardNav from '../components/CardNav.jsx'
+import { useUser } from '../context/UserContext.jsx'
 
 const USERNAME_RE = /^[a-z0-9_]{3,20}$/
 
 export default function Initials() {
+  const { refetchUser } = useUser()
   const navigate = useNavigate()
   const [name, setName] = useState('')
   const [username, setUsername] = useState('')
@@ -44,8 +46,10 @@ export default function Initials() {
     setError('')
     try {
       await axios.post('/api/auth/complete-profile', { name: name.trim(), username })
+      await refetchUser()
       navigate('/home')
-    } catch (err) {
+    }
+      catch (err) {
       const msg = err?.response?.data?.message || 'Something went wrong. Try again.'
       setError(msg)
     } finally {
